@@ -7,7 +7,7 @@ import fetchJson from "../lib/fetchJson";
 const Login = () => {
   // here we just check if user is already logged in and redirect to profile
   const { mutateUser} = useUser({
-    redirectTo: '/profile-sg',
+    redirectTo: '/profile',
     redirectIfFound: true
   })
 
@@ -31,7 +31,7 @@ const Login = () => {
       )
     } catch(error) {
       console.error('An unexpected error happended:', error)
-      setErrorMsg(errro.data.message)
+      setErrorMsg(error.data.message)
     }
   }
   return (

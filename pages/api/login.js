@@ -22,11 +22,7 @@ async function handler (req, res)  {
 
   if(match) {
     const user = {...login, isLoggedIn: true}
-    req.session.set("user", {
-      id: 322,
-      admin: true
-
-    });
+    req.session.set("user", user);
     await req.session.save();
     res.send('Logged in')
   } else {
